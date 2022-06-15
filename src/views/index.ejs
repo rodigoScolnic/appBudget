@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://kit.fontawesome.com/ec74e78deb.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Your<span>B</span>udget</h1>
+    <div class="item-list">
+    <% data.forEach(e => { %>
+        <div class="item">
+            <p class="id-item">#<%= e.id %></p>
+            <p><%= e.name %></p>
+            <p><%= e.amount %></p>
+            <form action="/<%= e.id %>?_method=delete" method="POST">
+                <button><i class="fa-solid fa-minus"></i></button>
+            </form>
+            <form action="<%= e.id %>/edit">
+                <button><i class="fa-solid fa-sliders"></i></button>
+            </form>
+        </div>
+    <% }); %>      
+    </div>
+
+    <hr>
+    
+    <form class="main-form" action="/" method="POST">
+        <p>new task</p>
+        <input type="text" placeholder="ITEM" name="name">
+        <input type="text" placeholder="AMOUNT" name="amount">
+        <button type="submit"><i class="fa-solid fa-plus"></i></button>
+    </form>
+
+</body>
+</html>
+
+

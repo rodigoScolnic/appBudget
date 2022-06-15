@@ -1,0 +1,44 @@
+* { box-sizing: border-box; }
+
+span {
+    color: crimson;
+}
+
+h1 {
+    text-align: center;
+}
+
+.item-list {
+    background-color: rgba(220, 20, 60, 0.2);
+    padding: 10px;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p, input {
+    border: 1px solid gray;
+    text-align: center;
+}
+
+p {
+    margin: 0 5px;
+    width: 10rem;
+}
+
+.id-item {
+    width: 30px;
+}
+
+.main-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.unlined {
+    border: none;
+}
