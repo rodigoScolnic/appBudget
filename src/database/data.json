@@ -4,5 +4,35 @@
   "name": "rodrigo",
   "amount": "3",
   "id": 1
+ },
+ {
+  "type": "positive",
+  "name": "supermercado",
+  "amount": "3000",
+  "id": 2
+ },
+ {
+  "type": "positive",
+  "name": "",
+  "amount": "",
+  "id": 3
+ },
+ {
+  "type": "negative",
+  "name": "supermercado",
+  "amount": "6000",
+  "id": 4
+ },
+ {
+  "type": "negative",
+  "name": "telo",
+  "amount": "6000",
+  "id": 5
+ },
+ {
+  "type": "positive",
+  "name": "supermercado",
+  "amount": "6000",
+  "id": 6
  }
 ]
