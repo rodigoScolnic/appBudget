@@ -1,5 +1,9 @@
 * { box-sizing: border-box; }
 
+.hide {
+    display: none;
+}
+
 span {
     color: crimson;
 }
@@ -8,25 +12,37 @@ h1 {
     text-align: center;
 }
 
-.item-list {
-    background-color: rgba(220, 20, 60, 0.2);
-    padding: 10px;
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
 }
 
 .item {
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: text .5s ease-in;
+}
+
+@keyframes text {
+    from {  color: rgba(0, 0, 0, 0);  }
+    to {  color: black; }
 }
 
 p, input {
-    border: 1px solid gray;
+    border: 1px solid black;
     text-align: center;
 }
 
 p {
     margin: 0 5px;
     width: 10rem;
+}
+
+.name-p {
+    text-transform: uppercase;
 }
 
 .id-item {

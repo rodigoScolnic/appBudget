@@ -1,7 +1,8 @@
 [
  {
-  "name": "supermercado",
-  "amount": "6000",
+  "type": "positive",
+  "name": "rodrigo",
+  "amount": "3",
   "id": 1
  }
 ]

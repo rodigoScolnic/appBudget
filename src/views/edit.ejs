@@ -12,7 +12,11 @@
     <h1>Edit<span>I</span>tem</h1>
     <form action="/<%= userFind.id %>?_method=PUT" method="POST">
         <div class="item">
-            <p class="id-item">#<%= userFind.id %></p> 
+            <p class="id-item">#<%= userFind.id %></p>
+            <select name="type" id="type" value="<% userFind.type %>">
+                <option value="positive">positivo</option>
+                <option value="negative">negativo</option>
+            </select>
             <p><input type="text" class="unlined" name="name" value="<%= userFind.name %>"></p> 
             <p><input type="text" class="unlined" name="amount" value="<%= userFind.amount %>"></p>
             <button type="submit"><i class="fa-solid fa-check"></i></button>

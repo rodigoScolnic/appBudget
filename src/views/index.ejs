@@ -10,32 +10,94 @@
 </head>
 <body>
     <h1>Your<span>B</span>udget</h1>
+    <hr>
+
+    <div class="filter-buttons">
+        <button id="all">Todos</button>
+        <button id="positive">Positivas</button>
+        <button id="negative">Negatives</button>
+        <button id="sort">Alfabeticamente</button>
+    </div>
+
+    <div class="item-list-n hide">
+        <% negative.forEach(e => { %>
+            <div class="item">
+                <p class="id-item">#<%= e.id %></p>
+                <p class="type-p"><%= e.type %></p>
+                <p class="name-p"><%= e.name %></p>
+                <p><%= e.amount %></p>
+                <form action="/<%= e.id %>?_method=delete" method="POST">
+                    <button><i class="fa-solid fa-minus"></i></button>
+                </form>
+                <form action="<%= e.id %>/edit">
+                    <button><i class="fa-solid fa-sliders"></i></button>
+                </form>
+            </div>
+        <% }); %>
+        <% if(negative.length == 0){ %>
+            <div class="item"><p>no hay nada aqui!</p></div>
+        <% } %>
+    </div>
+
+    <div class="item-list-p hide">
+        <% positive.forEach(e => { %>
+            <div class="item">
+                <p class="id-item">#<%= e.id %></p>
+                <p class="type-p"><%= e.type %></p>
+                <p class="name-p"><%= e.name %></p>
+                <p><%= e.amount %></p>
+                <form action="/<%= e.id %>?_method=delete" method="POST">
+                    <button><i class="fa-solid fa-minus"></i></button>
+                </form>
+                <form action="<%= e.id %>/edit">
+                    <button><i class="fa-solid fa-sliders"></i></button>
+                </form>
+            </div>
+        <% }); %> 
+        <% if(positive.length == 0){ %>
+            <div class="item"><p>no hay nada aqui!</p></div>
+        <% } %>     
+    </div>
+
     <div class="item-list">
     <% data.forEach(e => { %>
         <div class="item">
             <p class="id-item">#<%= e.id %></p>
-            <p><%= e.name %></p>
+            <p class="type-p"><%= e.type %></p>
+            <p class="name-p"><%= e.name %></p>
             <p><%= e.amount %></p>
             <form action="/<%= e.id %>?_method=delete" method="POST">
-                <button><i class="fa-solid fa-minus"></i></button>
+                <button class="delete"><i class="fa-solid fa-minus"></i></button>
             </form>
             <form action="<%= e.id %>/edit">
                 <button><i class="fa-solid fa-sliders"></i></button>
             </form>
         </div>
-    <% }); %>      
+    <% }); %>
+    <% if(data.length == 0){ %>
+        <div class="item"><p>no hay nada aqui!</p></div>
+    <% } %>    
     </div>
 
     <hr>
     
     <form class="main-form" action="/" method="POST">
         <p>new task</p>
+        <select name="type" id="type">
+            <option value="">elije uno...</option>
+            <option value="positive">positivo</option>
+            <option value="negative">negativo</option>
+        </select>
         <input type="text" placeholder="ITEM" name="name">
         <input type="text" placeholder="AMOUNT" name="amount">
-        <button type="submit"><i class="fa-solid fa-plus"></i></button>
+        <button id="item-added" type="submit"><i class="fa-solid fa-plus"></i></button>
     </form>
 
+    
+
 </body>
+<script src="../script/script.js">
+</script>
 </html>
 
 

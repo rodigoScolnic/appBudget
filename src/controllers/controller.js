@@ -5,8 +5,16 @@ const data = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
 
 module.exports = {
     index: (req,res)=> {
-        
-        res.render('index' , {data});
+
+        let positive = data.filter(e => e.type == "positive")
+        let negative = data.filter(e => e.type == "negative")
+
+        let array = function sort(){
+          let array = data.sort((a, b) => (a.type > b.type) ? 1 : -1)
+          return array
+        }
+
+        res.render('index' , {data , positive, negative, array});
     } ,
     create: (req,res)=> {
         res.render('create');
@@ -15,8 +23,6 @@ module.exports = {
         let user = req.body
 
         let last = data.pop();
-
-        console.log(last);
 
         if(last){
             user.id = last.id + 1;
